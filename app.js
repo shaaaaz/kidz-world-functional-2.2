@@ -121,7 +121,7 @@ function updatePrice() {
 }
 
 // Whatsapp Integration
-var whatsappLink = "https://api.whatsapp.com/send?phone=7972648608&text=Order%20details"
+var whatsappLink = "https://api.whatsapp.com/send?phone=8888888888&text=Order%20details"
 
 function updateWhatsappLink(){
 
@@ -135,7 +135,6 @@ function updateWhatsappLink(){
 
 cartButton.onclick = () => {
   updatePrice();
-  // console.log("ayman")
 
   //calling updateWhatsappLink()
   updateWhatsappLink();
