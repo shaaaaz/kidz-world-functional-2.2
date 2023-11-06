@@ -120,10 +120,26 @@ function updatePrice() {
   finalCents = totalPriceInCents % 100;
 }
 
+// Whatsapp Integration
+var whatsappLink = "https://api.whatsapp.com/send?phone=7972648608&text=Order%20details"
+
+function updateWhatsappLink(){
+
+  for(let index=0;index<items.length;index++){
+    if(items[index].quantity != 0){
+      whatsappLink += "%0A" + items[index].name + "%20" + items[index].quantity;
+    }
+  }
+  whatsappLink += "%0A" + "Total%20Price:%20$" + finalDollars + "%20" + finalCents + "c";
+}
 
 cartButton.onclick = () => {
   updatePrice();
+  // console.log("ayman")
 
+  //calling updateWhatsappLink()
+  updateWhatsappLink();
+  window.open(whatsappLink, "_blank");
 
   for (let index = 0; index < items.length; index++) {
     if (items[index].quantity != 0) {
